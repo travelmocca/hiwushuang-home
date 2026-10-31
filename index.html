@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="陈璐 · mocca — 独立开发 / AI 探索 / 上海">
+    <meta name="author" content="陈璐">
+    <meta name="theme-color" content="#f7f4ef" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#12141a" media="(prefers-color-scheme: dark)">
+    <title>陈璐 · mocca</title>
+    <!-- Based on sethcottle/simplefolio (MIT): https://github.com/sethcottle/simplefolio -->
+    <style>
+        :root {
+            --bg: #f7f4ef;
+            --bg-elevated: #ffffff;
+            --text: #1c1917;
+            --text-muted: #78716c;
+            --accent: #0f766e;
+            --accent-soft: rgba(15, 118, 110, 0.12);
+            --link: #0f766e;
+            --link-hover: #115e59;
+            --border: #e7e5e4;
+            --tag-bg: #f5f5f4;
+            --tag-text: #44403c;
+            --shadow: 0 18px 50px rgba(28, 25, 23, 0.08);
+            --radius: 18px;
+            --max: 720px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #12141a;
+            --bg-elevated: #1a1d26;
+            --text: #f5f5f4;
+            --text-muted: #a8a29e;
+            --accent: #5eead4;
+            --accent-soft: rgba(94, 234, 212, 0.12);
+            --link: #5eead4;
+            --link-hover: #99f6e4;
+            --border: #2a2f3a;
+            --tag-bg: #232833;
+            --tag-text: #d6d3d1;
+            --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #12141a;
+                --bg-elevated: #1a1d26;
+                --text: #f5f5f4;
+                --text-muted: #a8a29e;
+                --accent: #5eead4;
+                --accent-soft: rgba(94, 234, 212, 0.12);
+                --link: #5eead4;
+                --link-hover: #99f6e4;
+                --border: #2a2f3a;
+                --tag-bg: #232833;
+                --tag-text: #d6d3d1;
+                --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC",
+                -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background:
+                radial-gradient(1200px 600px at 10% -10%, var(--accent-soft), transparent 55%),
+                radial-gradient(900px 500px at 100% 0%, rgba(245, 158, 11, 0.08), transparent 50%),
+                var(--bg);
+            min-height: 100vh;
+            padding: 2.5rem 1.25rem 4rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--link);
+            color: var(--bg);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0 0 4px 0;
+            z-index: 100;
+        }
+        .skip-link:focus { top: 0; }
+
+        .shell {
+            max-width: var(--max);
+            margin: 0 auto;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 0.5rem;
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+            z-index: 20;
+        }
+        .theme-toggle:hover { transform: scale(1.05); }
+        .theme-toggle:focus-visible {
+            outline: 3px solid var(--link);
+            outline-offset: 2px;
+        }
+
+        .hero {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: calc(var(--radius) + 4px);
+            box-shadow: var(--shadow);
+            padding: 2.25rem 2rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            color: var(--accent);
+            background: var(--accent-soft);
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-soft);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 0.35rem;
+        }
+
+        .aka {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .tagline {
+            font-size: 1.15rem;
+            color: var(--text);
+            margin-bottom: 0.35rem;
+            font-weight: 500;
+        }
+
+        .tagline-en {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chip {
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.85rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        a { color: var(--link); transition: color 0.2s ease; }
+        a:hover { color: var(--link-hover); }
+
+        .links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.55rem 1rem;
+            color: var(--text);
+            font-size: 0.92rem;
+            transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+        }
+        .links a:hover {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+        .links a:focus-visible {
+            outline: 3px solid var(--link);
+            outline-offset: 3px;
+        }
+
+        .external-icon {
+            font-size: 0.75em;
+            opacity: 0.65;
+            text-decoration: none !important;
+        }
+
+        section.block {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem 1.75rem 1.5rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 8px 24px rgba(28, 25, 23, 0.04);
+        }
+
+        h2 {
+            font-size: 1.05rem;
+            font-weight: 650;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        h2::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .block p {
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            font-size: 0.98rem;
+        }
+
+        .block p:last-child { margin-bottom: 0; }
+
+        .project {
+            padding: 1rem 0;
+            border-top: 1px solid var(--border);
+        }
+        .project:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .project-title-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .project-title.placeholder {
+            color: var(--text-muted);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border-radius: 999px;
+            padding: 0.2rem 0.55rem;
+            white-space: nowrap;
+        }
+        .badge.muted {
+            background: var(--tag-bg);
+            color: var(--text-muted);
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: grid;
+            gap: 0.65rem;
+        }
+        .contact-list li {
+            display: flex;
+            gap: 0.75rem;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+        .contact-label {
+            min-width: 4.5rem;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+        .contact-list a {
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+        footer a { color: var(--text-muted); }
+
+        .sr-only {
+            position: absolute;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0);
+            white-space: nowrap; border: 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; animation: none !important; }
+        }
+
+        @media (max-width: 520px) {
+            .hero, section.block { padding: 1.35rem 1.15rem; }
+            body { padding-top: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">跳到正文</a>
+
+    <button class="theme-toggle" aria-label="切换主题" title="切换浅色 / 深色" type="button">
+        <span aria-hidden="true">🌙</span>
+    </button>
+
+    <div class="shell">
+        <header class="hero">
+            <div class="eyebrow">Shanghai · hiwushuang.me</div>
+            <h1>陈璐</h1>
+            <p class="aka">mocca</p>
+            <p class="tagline">独立开发 · AI 探索 · 在上海做想做的事</p>
+            <p class="tagline-en">Indie building &amp; AI exploration from Shanghai.</p>
+            <div class="chips" aria-label="标签">
+                <span class="chip">独立开发</span>
+                <span class="chip">AI</span>
+                <span class="chip">上海</span>
+            </div>
+            <nav class="links" aria-label="外链">
+                <a href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">
+                    <span aria-hidden="true">⌘</span>
+                    <span>GitHub</span>
+                    <span class="external-icon" aria-hidden="true">↗</span>
+                    <span class="sr-only">（新窗口打开）</span>
+                </a>
+                <a href="mailto:buptchenlu@gmail.com">
+                    <span aria-hidden="true">✉</span>
+                    <span>邮件</span>
+                </a>
+            </nav>
+        </header>
+
+        <main id="main">
+            <section class="block" id="about" aria-labelledby="about-heading">
+                <h2 id="about-heading">关于</h2>
+                <p>你好，我是陈璐（mocca）。目前在上海，喜欢用 AI 做独立小项目，也在慢慢把想法变成能上线的东西。</p>
+                <p>这个站点是个人主页起点；域名 <strong>hiwushuang.me</strong> 已就绪，内容会持续更新。</p>
+            </section>
+
+            <section class="block" id="projects" aria-labelledby="projects-heading">
+                <h2 id="projects-heading">项目</h2>
+                <article class="project">
+                    <div class="project-title-row">
+                        <span class="project-title placeholder">（项目占位）</span>
+                        <span class="badge muted">待补充</span>
+                    </div>
+                    <p class="project-description">这里之后会放你真正上线的作品。目前先留空，避免写假项目。</p>
+                </article>
+                <article class="project">
+                    <div class="project-title-row">
+                        <a class="project-title" href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">GitHub · travelmocca</a>
+                        <span class="badge">代码</span>
+                    </div>
+                    <p class="project-description">公开仓库入口；有具体项目时再拆成独立卡片。</p>
+                </article>
+            </section>
+
+            <section class="block" id="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">联系</h2>
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-label">邮件</span>
+                        <a href="mailto:buptchenlu@gmail.com">buptchenlu@gmail.com</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">GitHub</span>
+                        <a href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">github.com/travelmocca</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">域名</span>
+                        <span>hiwushuang.me（DNS 稍后指向）</span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>© <span id="year">2026</span> 陈璐 · mocca · 基于 <a href="https://github.com/sethcottle/simplefolio" target="_blank" rel="noopener noreferrer">simplefolio</a> 定制</p>
+        </footer>
+    </div>
+
+    <script>
+        document.body.classList.add('js-enabled');
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        const themeToggle = document.querySelector('.theme-toggle');
+        const html = document.documentElement;
+        const themeIcon = themeToggle ? themeToggle.querySelector('span') : null;
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme) {
+            html.dataset.theme = savedTheme;
+        } else if (systemPrefersDark) {
+            html.dataset.theme = 'dark';
+        }
+
+        function updateThemeIcon() {
+            if (!themeIcon) return;
+            const isDark = html.dataset.theme === 'dark' || (!html.dataset.theme && systemPrefersDark);
+            themeIcon.textContent = isDark ? '☀️' : '🌙';
+            if (themeToggle) {
+                themeToggle.setAttribute('aria-label', isDark ? '切换到浅色主题' : '切换到深色主题');
+            }
+        }
+        updateThemeIcon();
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const newTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+                html.dataset.theme = newTheme;
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon();
+                const announcement = document.createElement('div');
+                announcement.className = 'sr-only';
+                announcement.setAttribute('role', 'status');
+                announcement.setAttribute('aria-live', 'polite');
+                announcement.textContent = newTheme === 'dark' ? '已切换到深色主题' : '已切换到浅色主题';
+                document.body.appendChild(announcement);
+                setTimeout(() => announcement.remove(), 1000);
+            });
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                html.dataset.theme = e.matches ? 'dark' : 'light';
+                updateThemeIcon();
+            }
+        });
+    </script>
+</body>
+</html>
