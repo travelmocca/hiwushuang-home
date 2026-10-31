@@ -12,4 +12,6 @@ for (const file of ["index.html", "tokens.css", "base.css", "styles.css"]) {
   cpSync(join(root, file), join(out, file));
 }
 
+cpSync(join(root, "assets"), join(out, "assets"), { recursive: true });
+
 console.log("Built static site → dist/");
