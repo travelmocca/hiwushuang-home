@@ -179,7 +179,20 @@ a:hover {
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-md);
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.hero__actions .social-links {
+  gap: var(--space-sm);
+}
+
+.hero .social-link:focus-visible {
+  outline-color: var(--color-accent-2);
+}
+
+.hero .social-logo-monochrome {
+  filter: brightness(0) invert(1);
 }
 
 .key {
@@ -453,26 +466,6 @@ a:hover {
   color: var(--color-ink);
 }
 
-.social-block {
-  margin-top: var(--space-2xl);
-}
-
-.social-heading {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: var(--text-title);
-  letter-spacing: var(--tracking-display);
-  color: var(--color-ink);
-  margin-bottom: var(--space-sm);
-}
-
-.social-intro {
-  font-size: var(--text-sm);
-  color: var(--color-muted);
-  margin-bottom: var(--space-md);
-  max-width: 48ch;
-}
-
 .social-links {
   display: flex;
   align-items: center;
@@ -512,12 +505,6 @@ a:hover {
 
 .social-link .social-logo-gmail {
   transform: scale(0.8303);
-}
-
-@media (prefers-color-scheme: dark) {
-  .social-logo-monochrome {
-    filter: brightness(0) invert(1);
-  }
 }
 
 .close-band {
