@@ -1,0 +1,6 @@
+dist/
+node_modules/
+.hallmark/before/
+.hallmark/before.*
+.hallmark/compare.html
+.agents/
