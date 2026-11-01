@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="陈璐 · mocca — 独立开发 / AI 探索 / 上海">
   <meta name="author" content="陈璐">
-  <meta name="theme-color" content="#e8f4e6">
+  <meta name="theme-color" content="#f5f5f2">
   <title>陈璐 · mocca</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,89 +15,77 @@
 <body>
   <a href="#main" class="skip-link">跳到正文</a>
 
-  <div class="meadow-scene" aria-hidden="true">
-    <div class="meadow-scene__sun"></div>
-    <div class="meadow-scene__cloud meadow-scene__cloud--a"></div>
-    <div class="meadow-scene__cloud meadow-scene__cloud--b"></div>
-    <div class="meadow-scene__cloud meadow-scene__cloud--c"></div>
-    <div class="meadow-scene__mist"></div>
-    <div class="meadow-scene__mountains" data-parallax="0.12">
-      <img src="assets/scenery/mountains.svg" alt="" width="1440" height="520" decoding="async">
+  <header class="site-nav" id="site-nav">
+    <div class="container site-nav__inner">
+      <a class="wordmark" href="/">mocca<em> · 陈璐</em></a>
+      <nav aria-label="页面">
+        <ul class="site-nav__links">
+          <li><a href="#about">关于</a></li>
+          <li><a href="#projects">项目</a></li>
+          <li><a href="#contact">联系</a></li>
+          <li><a class="nav-cta" href="mailto:buptchenlu@gmail.com">邮件</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="meadow-scene__meadow-front" data-parallax="0.06"></div>
-    <div class="meadow-scene__grass" aria-hidden="true">
-      <span class="grass-blade" style="--h:42px;--sway-dur:2.8s;--sway-delay:-0.4s"></span>
-      <span class="grass-blade" style="--h:56px;--sway-dur:3.4s;--sway-delay:-1.2s"></span>
-      <span class="grass-blade" style="--h:38px;--sway-dur:2.6s;--sway-delay:-0.8s"></span>
-      <span class="grass-blade" style="--h:62px;--sway-dur:3.8s;--sway-delay:-2s"></span>
-      <span class="grass-blade" style="--h:44px;--sway-dur:3s;--sway-delay:-0.2s"></span>
-      <span class="grass-blade" style="--h:52px;--sway-dur:3.2s;--sway-delay:-1.6s"></span>
-      <span class="grass-blade" style="--h:36px;--sway-dur:2.4s;--sway-delay:-0.6s"></span>
-      <span class="grass-blade" style="--h:58px;--sway-dur:3.6s;--sway-delay:-1.4s"></span>
-      <span class="grass-blade" style="--h:40px;--sway-dur:2.9s;--sway-delay:-1s"></span>
-      <span class="grass-blade" style="--h:48px;--sway-dur:3.1s;--sway-delay:-1.8s"></span>
-      <span class="grass-blade" style="--h:54px;--sway-dur:3.5s;--sway-delay:-0.3s"></span>
-      <span class="grass-blade" style="--h:46px;--sway-dur:3.3s;--sway-delay:-1.1s"></span>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero__media" aria-hidden="true">
+      <video
+        class="hero__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="assets/scenery/meadow-poster.jpg"
+      >
+        <source src="assets/scenery/meadow-loop.webm" type="video/webm">
+      </video>
+      <div class="hero__feather"></div>
     </div>
-  </div>
-
-  <div class="site-shell">
-    <header class="site-nav glass">
-      <div class="container site-nav__inner">
-        <a class="wordmark" href="/">mocca<em> · 陈璐</em></a>
-        <nav aria-label="页面">
-          <ul class="site-nav__links">
-            <li><a href="#about">关于</a></li>
-            <li><a href="#projects">项目</a></li>
-            <li><a href="#contact">联系</a></li>
-            <li><a class="nav-cta" href="mailto:buptchenlu@gmail.com">邮件</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="container">
-        <div class="hero__panel glass reveal">
-          <div class="hero__layout">
-            <div class="hero__content">
-              <p class="hero__eyebrow">hiwushuang.me</p>
-              <h1 id="hero-heading">陈璐</h1>
-              <p class="hero__handle">mocca</p>
-              <ul class="hero__tags" aria-label="方向">
-                <li>独立开发</li>
-                <li>AI 探索</li>
-                <li>在上海做想做的事</li>
-              </ul>
-              <p class="hero__lead-en">Indie building &amp; AI exploration from Shanghai.</p>
-              <nav class="hero__social" aria-label="社交平台">
-                <a class="social-link" href="https://x.com/btc_sima" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" title="X / Twitter">
-                  <img class="icon-mono icon-x" src="assets/icons/social/x.svg" alt="" width="15" height="15">
-                </a>
-                <a class="social-link" href="https://www.xiaohongshu.com/user/profile/5b2369984eacab67de3f2aa0" target="_blank" rel="noopener noreferrer" aria-label="小红书" title="小红书">
-                  <img src="assets/icons/social/xiaohongshu.png" alt="" width="14" height="14">
-                </a>
-                <a class="social-link" href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-                  <img class="icon-mono" src="assets/icons/social/github.svg" alt="" width="16" height="16">
-                </a>
-                <a class="social-link" href="mailto:buptchenlu@gmail.com" aria-label="Gmail：发送邮件" title="Gmail">
-                  <img class="icon-gmail" src="assets/icons/social/gmail.svg" alt="" width="19" height="19">
-                </a>
-              </nav>
-            </div>
-            <figure class="hero__scene-card reveal">
-              <div class="hero__scene-card-inner"></div>
-              <figcaption class="hero__scene-caption">idea → build → ship</figcaption>
-            </figure>
+    <div class="container hero__container">
+      <div class="hero__panel glass reveal">
+        <div class="hero__layout">
+          <div class="hero__content">
+            <p class="hero__eyebrow">hiwushuang.me</p>
+            <h1 id="hero-heading">陈璐</h1>
+            <p class="hero__handle">mocca</p>
+            <ul class="hero__tags" aria-label="方向">
+              <li>独立开发</li>
+              <li>AI 探索</li>
+              <li>在上海做想做的事</li>
+            </ul>
+            <p class="hero__lead-en">Indie building &amp; AI exploration from Shanghai.</p>
+            <nav class="hero__social" aria-label="社交平台">
+              <a class="social-link" href="https://x.com/btc_sima" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" title="X / Twitter">
+                <img class="icon-mono icon-x" src="assets/icons/social/x.svg" alt="" width="15" height="15">
+              </a>
+              <a class="social-link" href="https://www.xiaohongshu.com/user/profile/5b2369984eacab67de3f2aa0" target="_blank" rel="noopener noreferrer" aria-label="小红书" title="小红书">
+                <img src="assets/icons/social/xiaohongshu.png" alt="" width="14" height="14">
+              </a>
+              <a class="social-link" href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                <img class="icon-mono" src="assets/icons/social/github.svg" alt="" width="16" height="16">
+              </a>
+              <a class="social-link" href="mailto:buptchenlu@gmail.com" aria-label="Gmail：发送邮件" title="Gmail">
+                <img class="icon-gmail" src="assets/icons/social/gmail.svg" alt="" width="19" height="19">
+              </a>
+            </nav>
           </div>
+          <figure class="hero__scene-card reveal">
+            <div class="hero__scene-card-inner"></div>
+            <figcaption class="hero__scene-caption">idea → build → ship</figcaption>
+          </figure>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <div class="page-surface">
     <main id="main" class="page-main">
       <section class="section" id="about" aria-labelledby="about-heading">
         <div class="container container--narrow">
-          <div class="section__panel glass reveal">
+          <div class="section__panel surface-panel reveal">
             <header class="section__header">
               <span class="section__label">About</span>
               <h2 id="about-heading">关于</h2>
@@ -113,7 +101,7 @@
 
       <section class="section" id="projects" aria-labelledby="projects-heading">
         <div class="container">
-          <div class="section__panel glass reveal">
+          <div class="section__panel surface-panel reveal">
             <header class="section__header">
               <span class="section__label">Work</span>
               <h2 id="projects-heading">项目</h2>
@@ -148,7 +136,7 @@
 
       <section class="section" id="contact" aria-labelledby="contact-heading">
         <div class="container container--narrow">
-          <div class="section__panel glass reveal">
+          <div class="section__panel surface-panel reveal">
             <header class="section__header">
               <span class="section__label">Contact</span>
               <h2 id="contact-heading">联系</h2>
@@ -175,7 +163,7 @@
 
     <aside class="outro" aria-label="合作">
       <div class="container">
-        <div class="outro__panel glass reveal">
+        <div class="outro__panel surface-panel reveal">
           <div class="outro__inner">
             <p>如果你在找一位在上海做独立开发与 AI 实验的 builder，可以直接写信。</p>
             <a class="btn" href="mailto:buptchenlu@gmail.com">buptchenlu@gmail.com</a>
@@ -186,7 +174,7 @@
 
     <footer class="site-footer">
       <div class="container">
-        <div class="glass">
+        <div class="surface-panel site-footer__panel">
           <p>© <span id="year">2026</span> 陈璐 (mocca)</p>
         </div>
       </div>

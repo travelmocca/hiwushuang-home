@@ -28,36 +28,33 @@
   --dur-fast: 160ms;
   --dur-base: 280ms;
   --dur-slow: 700ms;
-  --dur-ambient: 18s;
 
   --container: 1080px;
   --container-narrow: 640px;
   --gutter: clamp(20px, 4vw, 48px);
   --section-gap: clamp(64px, 9vw, 112px);
 
-  /* Sky & meadow — bright, readable */
-  --sky-top: #cfe9f5;
-  --sky-mid: #e8f4e6;
-  --sky-bottom: #c5e8b8;
-  --sun-core: #fff6d4;
-  --sun-glow: rgba(255, 214, 120, 0.45);
+  /* Page surfaces (warm light, cofounder-style) */
+  --surface-page: #f5f5f2;
+  --surface-panel: #fbfbf8;
+  --hero-fallback: #dcefd4;
 
-  --fg: #152318;
-  --fg-secondary: #2d4532;
-  --fg-muted: #4a6350;
-  --fg-faint: #6b8572;
+  --fg: #262323;
+  --fg-secondary: #3d3a38;
+  --fg-muted: #5c5856;
+  --fg-faint: #7a7572;
 
   --accent: #1a6b42;
   --accent-soft: #2d8f5a;
   --accent-ink: #ffffff;
   --focus: #1a7a4a;
 
-  --panel-bg: rgba(255, 255, 255, 0.82);
-  --panel-bg-strong: rgba(255, 255, 255, 0.92);
-  --panel-border: rgba(255, 255, 255, 0.95);
-  --panel-shadow: 0 8px 32px rgba(21, 45, 30, 0.08), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
-  --line: rgba(21, 45, 30, 0.1);
-  --line-strong: rgba(21, 45, 30, 0.16);
+  --panel-bg: rgba(251, 251, 248, 0.88);
+  --panel-bg-strong: rgba(251, 251, 248, 0.96);
+  --panel-border: rgba(38, 35, 35, 0.08);
+  --panel-shadow: 0 8px 32px rgba(38, 35, 35, 0.06), 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+  --line: rgba(38, 35, 35, 0.1);
+  --line-strong: rgba(38, 35, 35, 0.16);
 
   --font-serif: "Noto Serif SC", "Songti SC", serif;
   --font-sans: "Noto Sans SC", system-ui, sans-serif;
@@ -71,9 +68,8 @@
   --radius-lg: 22px;
   --radius-full: 999px;
 
-  --z-scene: 0;
-  --z-shell: 2;
   --z-nav: 50;
+  --nav-height: 4rem;
 }
 
 @media (max-width: 40rem) {
