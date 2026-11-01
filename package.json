@@ -3,7 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "lint:hallmark": "node .agents/skills/hallmark/scripts/sloplint.mjs index.html styles.css tokens.css base.css --genre modern-minimal --render"
+    "build": "node scripts/build.mjs"
   }
 }

@@ -5,245 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="陈璐 · mocca — 独立开发 / AI 探索 / 上海">
   <meta name="author" content="陈璐">
-  <meta name="theme-color" content="#1a1d24">
+  <meta name="theme-color" content="#0c0d10">
   <title>陈璐 · mocca</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a href="#main" class="skip-link">跳到正文</a>
 
-  <header class="site-nav">
-    <div class="container site-nav__inner">
-      <a class="wordmark" href="/">mocca<span> · 陈璐</span></a>
-      <nav aria-label="页面">
-        <ul class="site-nav__links">
-          <li><a href="#about">关于</a></li>
-          <li><a href="#projects">项目</a></li>
-          <li><a href="#contact">联系</a></li>
-          <li><a class="key key--ghost" href="mailto:buptchenlu@gmail.com">邮件</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="page-bg" aria-hidden="true">
+    <div class="page-bg__grid"></div>
+    <div class="page-bg__glow"></div>
+    <div class="page-bg__glow page-bg__glow--secondary"></div>
+  </div>
 
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="container hero__grid">
-      <div class="hero__copy">
-        <h1 id="hero-heading">陈璐</h1>
-        <p class="hero__mono">mocca</p>
-        <ul class="lead-tags" aria-label="方向">
-          <li>独立开发</li>
-          <li>AI 探索</li>
-          <li>在上海做想做的事</li>
-        </ul>
-        <p class="lead-en">Indie building &amp; AI exploration from Shanghai.</p>
-        <div class="hero__actions">
-          <nav class="social-links" aria-label="社交平台">
+  <div class="site-shell">
+    <header class="site-nav">
+      <div class="container site-nav__inner">
+        <a class="wordmark" href="/">mocca<em> · 陈璐</em></a>
+        <nav aria-label="页面">
+          <ul class="site-nav__links">
+            <li><a href="#about">关于</a></li>
+            <li><a href="#projects">项目</a></li>
+            <li><a href="#contact">联系</a></li>
+            <li><a class="nav-cta" href="mailto:buptchenlu@gmail.com">邮件</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero__layout">
+        <div class="hero__content">
+          <p class="hero__eyebrow">hiwushuang.me</p>
+          <h1 id="hero-heading">陈璐</h1>
+          <p class="hero__handle">mocca</p>
+          <ul class="hero__tags" aria-label="方向">
+            <li>独立开发</li>
+            <li>AI 探索</li>
+            <li>在上海做想做的事</li>
+          </ul>
+          <p class="hero__lead-en">Indie building &amp; AI exploration from Shanghai.</p>
+          <nav class="hero__social social-links" aria-label="社交平台">
             <a class="social-link" href="https://x.com/btc_sima" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" title="X / Twitter">
-              <img class="social-logo-monochrome social-logo-x" src="assets/icons/social/x.svg" alt="" width="15" height="15">
+              <img class="icon-mono icon-x" src="assets/icons/social/x.svg" alt="" width="15" height="15">
             </a>
             <a class="social-link" href="https://www.xiaohongshu.com/user/profile/5b2369984eacab67de3f2aa0" target="_blank" rel="noopener noreferrer" aria-label="小红书" title="小红书">
               <img src="assets/icons/social/xiaohongshu.png" alt="" width="14" height="14">
             </a>
             <a class="social-link" href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-              <img class="social-logo-monochrome" src="assets/icons/social/github.svg" alt="" width="16" height="16">
+              <img class="icon-mono" src="assets/icons/social/github.svg" alt="" width="16" height="16">
             </a>
             <a class="social-link" href="mailto:buptchenlu@gmail.com" aria-label="Gmail：发送邮件" title="Gmail">
-              <img class="social-logo-gmail" src="assets/icons/social/gmail.svg" alt="" width="19" height="19">
+              <img class="icon-gmail" src="assets/icons/social/gmail.svg" alt="" width="19" height="19">
             </a>
           </nav>
         </div>
-      </div>
-      <div class="field-wrap" aria-hidden="true">
-        <canvas id="ascii-field" width="640" height="480"></canvas>
-        <pre class="field-fallback" id="field-fallback"></pre>
-        <span class="field-caption">idea → build → ship</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="fold-rule" role="presentation"></div>
-
-  <main id="main">
-    <section class="section-paper" id="about" aria-labelledby="about-heading">
-      <div class="container">
-        <header class="section-head">
-          <h2 id="about-heading">关于</h2>
-          <p>在上海用 AI 做独立小项目，把想法慢慢做成能上线的东西。</p>
-        </header>
-        <div class="about-grid cut-panel">
-          <p>你好，我是陈璐（mocca）。目前在上海，喜欢用 AI 做独立小项目，也在慢慢把想法变成能上线的东西。</p>
-          <p>这个站点是个人主页起点；域名 <strong>hiwushuang.me</strong> 已就绪，内容会持续更新。</p>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__visual-mesh"></div>
+          <div class="hero__visual-lines"></div>
+          <div class="hero__visual-inner">
+            <span class="hero__visual-caption">idea → build → ship</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-paper" id="projects" aria-labelledby="projects-heading">
+    <main id="main" class="page-main">
+      <section class="section" id="about" aria-labelledby="about-heading">
+        <div class="container container--narrow">
+          <header class="section__header">
+            <span class="section__label">About</span>
+            <h2 id="about-heading">关于</h2>
+            <p class="section__intro">在上海用 AI 做独立小项目，把想法慢慢做成能上线的东西。</p>
+          </header>
+          <div class="prose">
+            <p>你好，我是陈璐（mocca）。目前在上海，喜欢用 AI 做独立小项目，也在慢慢把想法变成能上线的东西。</p>
+            <p>这个站点是个人主页起点；域名 <strong>hiwushuang.me</strong> 已就绪，内容会持续更新。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-heading">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__label">Work</span>
+            <h2 id="projects-heading">项目</h2>
+            <p class="section__intro">真实作品上线后再写进列表；现在只保留占位与公开代码入口。</p>
+          </header>
+          <ul class="work-list">
+            <li class="work-item work-item--muted">
+              <div class="work-item__main">
+                <p class="work-item__title work-item__title--placeholder">（项目占位）</p>
+                <p class="work-item__desc">这里之后会放你真正上线的作品。目前先留空，避免写假项目。</p>
+              </div>
+              <span class="work-item__badge">待补充</span>
+            </li>
+            <li class="work-item work-item--highlight">
+              <div class="work-item__main">
+                <p class="work-item__title">
+                  <a href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">GitHub · travelmocca</a>
+                </p>
+                <p class="work-item__desc">公开仓库入口；有具体项目时再拆成独立卡片。</p>
+              </div>
+              <span class="work-item__badge">代码</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-heading">
+        <div class="container container--narrow">
+          <header class="section__header">
+            <span class="section__label">Contact</span>
+            <h2 id="contact-heading">联系</h2>
+            <p class="section__intro">欢迎通过邮件或 GitHub 找到我；社交链接见页首。</p>
+          </header>
+          <dl class="contact-grid">
+            <div class="contact-item">
+              <dt>邮件</dt>
+              <dd><a href="mailto:buptchenlu@gmail.com">buptchenlu@gmail.com</a></dd>
+            </div>
+            <div class="contact-item">
+              <dt>GitHub</dt>
+              <dd><a href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">github.com/travelmocca</a></dd>
+            </div>
+            <div class="contact-item">
+              <dt>站点</dt>
+              <dd><a href="https://hiwushuang.me">hiwushuang.me</a></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <aside class="outro" aria-label="合作">
       <div class="container">
-        <header class="section-head">
-          <h2 id="projects-heading">项目</h2>
-          <p>真实作品上线后再写进列表；现在只保留占位与公开代码入口。</p>
-        </header>
-        <table class="index-table">
-          <thead>
-            <tr>
-              <th scope="col">名称</th>
-              <th scope="col">说明</th>
-              <th scope="col">状态</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="title placeholder">（项目占位）</td>
-              <td class="note">这里之后会放你真正上线的作品。目前先留空，避免写假项目。</td>
-              <td class="meta">待补充</td>
-            </tr>
-            <tr class="highlight">
-              <td class="title"><a href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">GitHub · travelmocca</a></td>
-              <td class="note">公开仓库入口；有具体项目时再拆成独立卡片。</td>
-              <td class="meta">代码</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="outro__inner">
+          <p>如果你在找一位在上海做独立开发与 AI 实验的 builder，可以直接写信。</p>
+          <a class="btn" href="mailto:buptchenlu@gmail.com">buptchenlu@gmail.com</a>
+        </div>
       </div>
-    </section>
+    </aside>
 
-    <section class="section-paper" id="contact" aria-labelledby="contact-heading">
+    <footer class="site-footer">
       <div class="container">
-        <header class="section-head">
-          <h2 id="contact-heading">联系</h2>
-          <p>欢迎通过邮件或 GitHub 找到我；社交链接见页首。</p>
-        </header>
-        <dl class="contact-rows">
-          <div class="contact-row">
-            <dt>邮件</dt>
-            <dd><a href="mailto:buptchenlu@gmail.com">buptchenlu@gmail.com</a></dd>
-          </div>
-          <div class="contact-row">
-            <dt>GitHub</dt>
-            <dd><a href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">github.com/travelmocca</a></dd>
-          </div>
-          <div class="contact-row">
-            <dt>站点</dt>
-            <dd><a href="https://hiwushuang.me">hiwushuang.me</a></dd>
-          </div>
-        </dl>
+        <p>© <span id="year">2026</span> 陈璐 (mocca)</p>
       </div>
-    </section>
-  </main>
-
-  <aside class="close-band" aria-label="合作">
-    <div class="container close-band__inner">
-      <p>如果你在找一位在上海做独立开发与 AI 实验的 builder，可以直接写信。</p>
-      <a class="key key--primary" href="mailto:buptchenlu@gmail.com">buptchenlu@gmail.com</a>
-    </div>
-  </aside>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year">2026</span> 陈璐 (mocca). Design: Hallmark Cobalt.</p>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
     (function () {
-      var yearEl = document.getElementById("year");
-      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
-      var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var canvas = document.getElementById("ascii-field");
-      var fallback = document.getElementById("field-fallback");
-      if (!canvas || !fallback) return;
-
-      var ramp = " .:-=+*#%@";
-      var cols = 72;
-      var rows = 36;
-      var t = 0;
-      var raf = 0;
-
-      function buildFallback() {
-        var lines = [];
-        for (var y = 0; y < rows; y++) {
-          var row = "";
-          for (var x = 0; x < cols; x++) {
-            var n = Math.sin(x * 0.18 + y * 0.11) * 0.5 + Math.cos((x + y) * 0.07 + t) * 0.5;
-            var idx = Math.max(0, Math.min(ramp.length - 1, Math.floor((n + 1) * 0.5 * (ramp.length - 1))));
-            row += ramp[idx];
-          }
-          lines.push(row);
-        }
-        fallback.textContent = lines.join("\n");
-      }
-
-      buildFallback();
-
-      if (reduced) return;
-
-      var ctx = canvas.getContext("2d");
-      if (!ctx) return;
-
-      function resize() {
-        var wrap = canvas.parentElement;
-        if (!wrap) return;
-        var dpr = Math.min(window.devicePixelRatio || 1, 2);
-        var w = wrap.clientWidth;
-        var h = wrap.clientHeight;
-        canvas.width = Math.floor(w * dpr);
-        canvas.height = Math.floor(h * dpr);
-        canvas.style.width = w + "px";
-        canvas.style.height = h + "px";
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      }
-
-      function draw() {
-        resize();
-        var w = canvas.clientWidth;
-        var h = canvas.clientHeight;
-        var rootStyle = getComputedStyle(document.documentElement);
-        var ground = rootStyle.getPropertyValue("--surface-ground-2").trim();
-        var glyphLow = rootStyle.getPropertyValue("--color-graphite-glyph-2").trim();
-        var glyphHigh = rootStyle.getPropertyValue("--color-accent-2").trim();
-        ctx.fillStyle = ground;
-        ctx.fillRect(0, 0, w, h);
-
-        var cellW = 8;
-        var cellH = 16;
-        var gx = Math.ceil(w / cellW);
-        var gy = Math.ceil(h / cellH);
-        ctx.font = "500 11px JetBrains Mono, ui-monospace, monospace";
-        ctx.textBaseline = "top";
-
-        for (var y = 0; y < gy; y++) {
-          for (var x = 0; x < gx; x++) {
-            var wave = Math.sin(x * 0.15 + t * 0.8) * 0.35 + Math.cos(y * 0.12 - t * 0.6) * 0.35;
-            var pulse = Math.sin((x + y) * 0.08 + t * 1.1) * 0.3;
-            var v = wave + pulse + 0.35;
-            var idx = Math.max(0, Math.min(ramp.length - 1, Math.floor(v * (ramp.length - 1))));
-            var ch = ramp[idx];
-            var mix = idx / (ramp.length - 1);
-            ctx.fillStyle = mix > 0.55 ? glyphHigh : glyphLow;
-            ctx.globalAlpha = 0.35 + mix * 0.65;
-            ctx.fillText(ch, x * cellW, y * cellH);
-          }
-        }
-        ctx.globalAlpha = 1;
-        t += 0.016;
-        raf = window.requestAnimationFrame(draw);
-      }
-
-      window.addEventListener("resize", resize);
-      draw();
-
-      document.addEventListener("visibilitychange", function () {
-        if (document.hidden) {
-          window.cancelAnimationFrame(raf);
-        } else if (!reduced) {
-          draw();
-        }
-      });
+      var el = document.getElementById("year");
+      if (el) el.textContent = String(new Date().getFullYear());
     })();
   </script>
 </body>
