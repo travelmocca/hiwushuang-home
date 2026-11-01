@@ -5,34 +5,42 @@
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduced) {
     document.documentElement.classList.add("reduce-motion");
+  } else {
+    document.documentElement.classList.add("motion-ok");
+  }
+
+  var video = document.querySelector(".hero__video");
+  if (video) {
+    if (reduced) {
+      video.pause();
+      video.removeAttribute("autoplay");
+    } else {
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(function () {
+          /* autoplay blocked — poster remains visible */
+        });
+      }
+    }
+  }
+
+  var nav = document.getElementById("site-nav");
+  var hero = document.querySelector(".hero");
+
+  function updateNavSurface() {
+    if (!nav || !hero) return;
+    var heroBottom = hero.offsetTop + hero.offsetHeight - nav.offsetHeight;
+    var onSurface = window.scrollY > heroBottom - 8;
+    nav.classList.toggle("site-nav--on-surface", onSurface);
+  }
+
+  window.addEventListener("scroll", updateNavSurface, { passive: true });
+  window.addEventListener("resize", updateNavSurface, { passive: true });
+  updateNavSurface();
+
+  if (reduced) {
     return;
   }
-
-  document.documentElement.classList.add("motion-ok");
-
-  var parallaxLayers = document.querySelectorAll("[data-parallax]");
-  var ticking = false;
-
-  function updateParallax() {
-    var y = window.scrollY;
-    parallaxLayers.forEach(function (layer) {
-      var rate = parseFloat(layer.getAttribute("data-parallax") || "0.2");
-      layer.style.setProperty("--scroll-y", y * rate + "px");
-    });
-    ticking = false;
-  }
-
-  window.addEventListener(
-    "scroll",
-    function () {
-      if (!ticking) {
-        window.requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
-    },
-    { passive: true }
-  );
-  updateParallax();
 
   var revealEls = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {
