@@ -360,6 +360,10 @@
   padding-block: var(--section-gap);
 }
 
+.page-main .section > .container {
+  max-width: var(--container);
+}
+
 .section__panel {
   padding: clamp(var(--space-lg), 4vw, var(--space-xl));
 }
@@ -420,6 +424,8 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: var(--space-md);
+  align-items: start;
+  min-height: 6.75rem;
   padding: var(--space-lg);
   border-top: 1px solid var(--line);
   transition: background var(--dur-base) var(--ease-out);
