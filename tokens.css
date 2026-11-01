@@ -1,7 +1,6 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* spacing */
   --space-3xs: 2px;
   --space-2xs: 4px;
   --space-xs: 8px;
@@ -11,72 +10,74 @@
   --space-xl: 40px;
   --space-2xl: 64px;
   --space-3xl: 96px;
-  --space-4xl: 128px;
 
-  /* type scale */
   --text-xs: 0.75rem;
   --text-sm: 0.8125rem;
   --text-md: 1rem;
   --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: clamp(1.5rem, 1.2vw + 1.1rem, 2rem);
-  --text-hero: clamp(2.75rem, 5vw + 1.25rem, 4.5rem);
-  --text-section: clamp(1.125rem, 0.4vw + 1rem, 1.375rem);
-  --text-lead: clamp(1.0625rem, 0.25vw + 1rem, 1.1875rem);
-  --leading-tight: 1.08;
-  --leading-body: 1.65;
+  --text-xl: 1.3125rem;
+  --text-hero: clamp(2.75rem, 5vw + 1.25rem, 4.25rem);
+  --text-section: clamp(1.35rem, 0.5vw + 1.1rem, 1.75rem);
+  --text-lead: clamp(1.0625rem, 0.2vw + 1rem, 1.1875rem);
+  --leading-tight: 1.12;
+  --leading-body: 1.7;
   --leading-relaxed: 1.75;
 
-  /* motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-fast: 140ms;
-  --dur-base: 220ms;
-  --dur-slow: 480ms;
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 700ms;
+  --dur-ambient: 18s;
 
-  /* layout */
-  --container: 1120px;
+  --container: 1080px;
   --container-narrow: 640px;
   --gutter: clamp(20px, 4vw, 48px);
-  --section-gap: clamp(72px, 10vw, 120px);
+  --section-gap: clamp(64px, 9vw, 112px);
 
-  /* palette — cool neutral dark, no purple gradient cliché */
-  --bg: oklch(14% 0.008 260);
-  --bg-elevated: oklch(17% 0.01 260);
-  --bg-subtle: oklch(20% 0.012 258);
-  --border: oklch(28% 0.014 260 / 0.55);
-  --border-strong: oklch(38% 0.018 258 / 0.45);
+  /* Sky & meadow — bright, readable */
+  --sky-top: #cfe9f5;
+  --sky-mid: #e8f4e6;
+  --sky-bottom: #c5e8b8;
+  --sun-core: #fff6d4;
+  --sun-glow: rgba(255, 214, 120, 0.45);
 
-  --fg: oklch(96% 0.008 260);
-  --fg-secondary: oklch(72% 0.016 258);
-  --fg-muted: oklch(55% 0.014 258);
-  --fg-faint: oklch(42% 0.012 260);
+  --fg: #152318;
+  --fg-secondary: #2d4532;
+  --fg-muted: #4a6350;
+  --fg-faint: #6b8572;
 
-  --accent: oklch(78% 0.08 220);
-  --accent-dim: oklch(62% 0.06 222);
-  --accent-glow: oklch(55% 0.12 225 / 0.35);
-  --focus: oklch(72% 0.1 220);
+  --accent: #1a6b42;
+  --accent-soft: #2d8f5a;
+  --accent-ink: #ffffff;
+  --focus: #1a7a4a;
 
-  /* typography */
-  --font-sans: "Noto Sans SC", "DM Sans", system-ui, sans-serif;
-  --font-display: "DM Sans", "Noto Sans SC", system-ui, sans-serif;
+  --panel-bg: rgba(255, 255, 255, 0.82);
+  --panel-bg-strong: rgba(255, 255, 255, 0.92);
+  --panel-border: rgba(255, 255, 255, 0.95);
+  --panel-shadow: 0 8px 32px rgba(21, 45, 30, 0.08), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  --line: rgba(21, 45, 30, 0.1);
+  --line-strong: rgba(21, 45, 30, 0.16);
+
+  --font-serif: "Noto Serif SC", "Songti SC", serif;
+  --font-sans: "Noto Sans SC", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking-tight: -0.035em;
-  --tracking-wide: 0.06em;
 
-  /* radii & depth */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --radius-full: 999px;
 
-  /* z-index */
-  --z-nav: 100;
-  --z-overlay: 10;
+  --z-scene: 0;
+  --z-shell: 2;
+  --z-nav: 50;
 }
 
 @media (max-width: 40rem) {
   :root {
-    --section-gap: 56px;
+    --section-gap: 52px;
   }
 }

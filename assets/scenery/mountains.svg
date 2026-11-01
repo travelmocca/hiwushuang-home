@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8dce8" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#7aab6e" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="peak-far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fa8b8"/>
+      <stop offset="100%" stop-color="#6d8a78"/>
+    </linearGradient>
+    <linearGradient id="peak-mid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a8f62"/>
+      <stop offset="100%" stop-color="#3d7348"/>
+    </linearGradient>
+    <linearGradient id="hill-near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a9a55"/>
+      <stop offset="55%" stop-color="#2d7a3e"/>
+      <stop offset="100%" stop-color="#1f5c2e"/>
+    </linearGradient>
+    <linearGradient id="mist-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4faf2" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#eef8ea" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#e8f5e4" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#peak-far)" d="M0 380 L0 520 L1440 520 L1440 340 Q1280 280 1120 320 T880 300 T640 340 T400 310 T160 350 T0 380 Z" opacity="0.72"/>
+  <path fill="url(#peak-mid)" d="M0 420 L0 520 L1440 520 L1440 400 Q1200 360 980 390 T680 380 T420 410 T0 420 Z" opacity="0.88"/>
+  <path fill="url(#hill-near)" d="M0 460 L0 520 L1440 520 L1440 440 Q1100 400 900 430 T520 450 T200 470 T0 460 Z"/>
+  <rect x="0" y="280" width="1440" height="240" fill="url(#mist-grad)"/>
+</svg>
