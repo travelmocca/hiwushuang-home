@@ -5,24 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="陈璐 · mocca — 独立开发 / AI 探索 / 上海">
   <meta name="author" content="陈璐">
-  <meta name="theme-color" content="#0c0d10">
+  <meta name="theme-color" content="#e8f4e6">
   <title>陈璐 · mocca</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a href="#main" class="skip-link">跳到正文</a>
 
-  <div class="page-bg" aria-hidden="true">
-    <div class="page-bg__grid"></div>
-    <div class="page-bg__glow"></div>
-    <div class="page-bg__glow page-bg__glow--secondary"></div>
+  <div class="meadow-scene" aria-hidden="true">
+    <div class="meadow-scene__sun"></div>
+    <div class="meadow-scene__cloud meadow-scene__cloud--a"></div>
+    <div class="meadow-scene__cloud meadow-scene__cloud--b"></div>
+    <div class="meadow-scene__cloud meadow-scene__cloud--c"></div>
+    <div class="meadow-scene__mist"></div>
+    <div class="meadow-scene__mountains" data-parallax="0.12">
+      <img src="assets/scenery/mountains.svg" alt="" width="1440" height="520" decoding="async">
+    </div>
+    <div class="meadow-scene__meadow-front" data-parallax="0.06"></div>
+    <div class="meadow-scene__grass" aria-hidden="true">
+      <span class="grass-blade" style="--h:42px;--sway-dur:2.8s;--sway-delay:-0.4s"></span>
+      <span class="grass-blade" style="--h:56px;--sway-dur:3.4s;--sway-delay:-1.2s"></span>
+      <span class="grass-blade" style="--h:38px;--sway-dur:2.6s;--sway-delay:-0.8s"></span>
+      <span class="grass-blade" style="--h:62px;--sway-dur:3.8s;--sway-delay:-2s"></span>
+      <span class="grass-blade" style="--h:44px;--sway-dur:3s;--sway-delay:-0.2s"></span>
+      <span class="grass-blade" style="--h:52px;--sway-dur:3.2s;--sway-delay:-1.6s"></span>
+      <span class="grass-blade" style="--h:36px;--sway-dur:2.4s;--sway-delay:-0.6s"></span>
+      <span class="grass-blade" style="--h:58px;--sway-dur:3.6s;--sway-delay:-1.4s"></span>
+      <span class="grass-blade" style="--h:40px;--sway-dur:2.9s;--sway-delay:-1s"></span>
+      <span class="grass-blade" style="--h:48px;--sway-dur:3.1s;--sway-delay:-1.8s"></span>
+      <span class="grass-blade" style="--h:54px;--sway-dur:3.5s;--sway-delay:-0.3s"></span>
+      <span class="grass-blade" style="--h:46px;--sway-dur:3.3s;--sway-delay:-1.1s"></span>
+    </div>
   </div>
 
   <div class="site-shell">
-    <header class="site-nav">
+    <header class="site-nav glass">
       <div class="container site-nav__inner">
         <a class="wordmark" href="/">mocca<em> · 陈璐</em></a>
         <nav aria-label="页面">
@@ -37,37 +57,38 @@
     </header>
 
     <section class="hero" aria-labelledby="hero-heading">
-      <div class="container hero__layout">
-        <div class="hero__content">
-          <p class="hero__eyebrow">hiwushuang.me</p>
-          <h1 id="hero-heading">陈璐</h1>
-          <p class="hero__handle">mocca</p>
-          <ul class="hero__tags" aria-label="方向">
-            <li>独立开发</li>
-            <li>AI 探索</li>
-            <li>在上海做想做的事</li>
-          </ul>
-          <p class="hero__lead-en">Indie building &amp; AI exploration from Shanghai.</p>
-          <nav class="hero__social social-links" aria-label="社交平台">
-            <a class="social-link" href="https://x.com/btc_sima" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" title="X / Twitter">
-              <img class="icon-mono icon-x" src="assets/icons/social/x.svg" alt="" width="15" height="15">
-            </a>
-            <a class="social-link" href="https://www.xiaohongshu.com/user/profile/5b2369984eacab67de3f2aa0" target="_blank" rel="noopener noreferrer" aria-label="小红书" title="小红书">
-              <img src="assets/icons/social/xiaohongshu.png" alt="" width="14" height="14">
-            </a>
-            <a class="social-link" href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-              <img class="icon-mono" src="assets/icons/social/github.svg" alt="" width="16" height="16">
-            </a>
-            <a class="social-link" href="mailto:buptchenlu@gmail.com" aria-label="Gmail：发送邮件" title="Gmail">
-              <img class="icon-gmail" src="assets/icons/social/gmail.svg" alt="" width="19" height="19">
-            </a>
-          </nav>
-        </div>
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero__visual-mesh"></div>
-          <div class="hero__visual-lines"></div>
-          <div class="hero__visual-inner">
-            <span class="hero__visual-caption">idea → build → ship</span>
+      <div class="container">
+        <div class="hero__panel glass reveal">
+          <div class="hero__layout">
+            <div class="hero__content">
+              <p class="hero__eyebrow">hiwushuang.me</p>
+              <h1 id="hero-heading">陈璐</h1>
+              <p class="hero__handle">mocca</p>
+              <ul class="hero__tags" aria-label="方向">
+                <li>独立开发</li>
+                <li>AI 探索</li>
+                <li>在上海做想做的事</li>
+              </ul>
+              <p class="hero__lead-en">Indie building &amp; AI exploration from Shanghai.</p>
+              <nav class="hero__social" aria-label="社交平台">
+                <a class="social-link" href="https://x.com/btc_sima" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" title="X / Twitter">
+                  <img class="icon-mono icon-x" src="assets/icons/social/x.svg" alt="" width="15" height="15">
+                </a>
+                <a class="social-link" href="https://www.xiaohongshu.com/user/profile/5b2369984eacab67de3f2aa0" target="_blank" rel="noopener noreferrer" aria-label="小红书" title="小红书">
+                  <img src="assets/icons/social/xiaohongshu.png" alt="" width="14" height="14">
+                </a>
+                <a class="social-link" href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                  <img class="icon-mono" src="assets/icons/social/github.svg" alt="" width="16" height="16">
+                </a>
+                <a class="social-link" href="mailto:buptchenlu@gmail.com" aria-label="Gmail：发送邮件" title="Gmail">
+                  <img class="icon-gmail" src="assets/icons/social/gmail.svg" alt="" width="19" height="19">
+                </a>
+              </nav>
+            </div>
+            <figure class="hero__scene-card reveal">
+              <div class="hero__scene-card-inner"></div>
+              <figcaption class="hero__scene-caption">idea → build → ship</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -76,92 +97,97 @@
     <main id="main" class="page-main">
       <section class="section" id="about" aria-labelledby="about-heading">
         <div class="container container--narrow">
-          <header class="section__header">
-            <span class="section__label">About</span>
-            <h2 id="about-heading">关于</h2>
-            <p class="section__intro">在上海用 AI 做独立小项目，把想法慢慢做成能上线的东西。</p>
-          </header>
-          <div class="prose">
-            <p>你好，我是陈璐（mocca）。目前在上海，喜欢用 AI 做独立小项目，也在慢慢把想法变成能上线的东西。</p>
-            <p>这个站点是个人主页起点；域名 <strong>hiwushuang.me</strong> 已就绪，内容会持续更新。</p>
+          <div class="section__panel glass reveal">
+            <header class="section__header">
+              <span class="section__label">About</span>
+              <h2 id="about-heading">关于</h2>
+              <p class="section__intro">在上海用 AI 做独立小项目，把想法慢慢做成能上线的东西。</p>
+            </header>
+            <div class="prose">
+              <p>你好，我是陈璐（mocca）。目前在上海，喜欢用 AI 做独立小项目，也在慢慢把想法变成能上线的东西。</p>
+              <p>这个站点是个人主页起点；域名 <strong>hiwushuang.me</strong> 已就绪，内容会持续更新。</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="projects" aria-labelledby="projects-heading">
         <div class="container">
-          <header class="section__header">
-            <span class="section__label">Work</span>
-            <h2 id="projects-heading">项目</h2>
-            <p class="section__intro">真实作品上线后再写进列表；现在只保留占位与公开代码入口。</p>
-          </header>
-          <ul class="work-list">
-            <li class="work-item work-item--muted">
-              <div class="work-item__main">
-                <p class="work-item__title work-item__title--placeholder">（项目占位）</p>
-                <p class="work-item__desc">这里之后会放你真正上线的作品。目前先留空，避免写假项目。</p>
-              </div>
-              <span class="work-item__badge">待补充</span>
-            </li>
-            <li class="work-item work-item--highlight">
-              <div class="work-item__main">
-                <p class="work-item__title">
-                  <a href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">GitHub · travelmocca</a>
-                </p>
-                <p class="work-item__desc">公开仓库入口；有具体项目时再拆成独立卡片。</p>
-              </div>
-              <span class="work-item__badge">代码</span>
-            </li>
-          </ul>
+          <div class="section__panel glass reveal">
+            <header class="section__header">
+              <span class="section__label">Work</span>
+              <h2 id="projects-heading">项目</h2>
+              <p class="section__intro">真实作品上线后再写进列表；现在只保留占位与公开代码入口。</p>
+            </header>
+            <ul class="work-list">
+              <li class="work-item work-item--muted">
+                <div class="work-item__main">
+                  <p class="work-item__title work-item__title--placeholder">（项目占位）</p>
+                  <p class="work-item__desc">这里之后会放你真正上线的作品。目前先留空，避免写假项目。</p>
+                </div>
+                <span class="work-item__badge">待补充</span>
+              </li>
+              <li class="work-item work-item--highlight">
+                <div class="work-item__main">
+                  <p class="work-item__title">
+                    <a href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">GitHub · travelmocca</a>
+                  </p>
+                  <p class="work-item__desc">公开仓库入口；有具体项目时再拆成独立卡片。</p>
+                </div>
+                <span class="work-item__badge">代码</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <section class="section" id="contact" aria-labelledby="contact-heading">
         <div class="container container--narrow">
-          <header class="section__header">
-            <span class="section__label">Contact</span>
-            <h2 id="contact-heading">联系</h2>
-            <p class="section__intro">欢迎通过邮件或 GitHub 找到我；社交链接见页首。</p>
-          </header>
-          <dl class="contact-grid">
-            <div class="contact-item">
-              <dt>邮件</dt>
-              <dd><a href="mailto:buptchenlu@gmail.com">buptchenlu@gmail.com</a></dd>
-            </div>
-            <div class="contact-item">
-              <dt>GitHub</dt>
-              <dd><a href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">github.com/travelmocca</a></dd>
-            </div>
-            <div class="contact-item">
-              <dt>站点</dt>
-              <dd><a href="https://hiwushuang.me">hiwushuang.me</a></dd>
-            </div>
-          </dl>
+          <div class="section__panel glass reveal">
+            <header class="section__header">
+              <span class="section__label">Contact</span>
+              <h2 id="contact-heading">联系</h2>
+              <p class="section__intro">欢迎通过邮件或 GitHub 找到我；社交链接见页首。</p>
+            </header>
+            <dl class="contact-grid">
+              <div class="contact-item">
+                <dt>邮件</dt>
+                <dd><a href="mailto:buptchenlu@gmail.com">buptchenlu@gmail.com</a></dd>
+              </div>
+              <div class="contact-item">
+                <dt>GitHub</dt>
+                <dd><a href="https://github.com/travelmocca" target="_blank" rel="noopener noreferrer">github.com/travelmocca</a></dd>
+              </div>
+              <div class="contact-item">
+                <dt>站点</dt>
+                <dd><a href="https://hiwushuang.me">hiwushuang.me</a></dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </section>
     </main>
 
     <aside class="outro" aria-label="合作">
       <div class="container">
-        <div class="outro__inner">
-          <p>如果你在找一位在上海做独立开发与 AI 实验的 builder，可以直接写信。</p>
-          <a class="btn" href="mailto:buptchenlu@gmail.com">buptchenlu@gmail.com</a>
+        <div class="outro__panel glass reveal">
+          <div class="outro__inner">
+            <p>如果你在找一位在上海做独立开发与 AI 实验的 builder，可以直接写信。</p>
+            <a class="btn" href="mailto:buptchenlu@gmail.com">buptchenlu@gmail.com</a>
+          </div>
         </div>
       </div>
     </aside>
 
     <footer class="site-footer">
       <div class="container">
-        <p>© <span id="year">2026</span> 陈璐 (mocca)</p>
+        <div class="glass">
+          <p>© <span id="year">2026</span> 陈璐 (mocca)</p>
+        </div>
       </div>
     </footer>
   </div>
 
-  <script>
-    (function () {
-      var el = document.getElementById("year");
-      if (el) el.textContent = String(new Date().getFullYear());
-    })();
-  </script>
+  <script src="scripts/meadow.js" defer></script>
 </body>
 </html>
