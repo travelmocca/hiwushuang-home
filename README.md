@@ -1,6 +1,6 @@
 # hiwushuang.me — personal homepage
 
-Static personal site for **陈璐 · mocca** ([hiwushuang.me](https://hiwushuang.me)). Layout and visual system follow [Nutlope/Hallmark](https://github.com/Nutlope/hallmark) with the **Cobalt** theme (graphite-forward hero, ruled index, keycap actions).
+Static personal site for **陈璐 · mocca** ([hiwushuang.me](https://hiwushuang.me)). Pure HTML/CSS with a minimal year script—no framework, no Hallmark template.
 
 ## Cloudflare Pages
 
@@ -10,39 +10,44 @@ Static personal site for **陈璐 · mocca** ([hiwushuang.me](https://hiwushuang
 | **Build command** | `npm run build` |
 | **Build output directory** | `dist` |
 | **Root directory** | `/` (repository root) |
-| **Node version** | 20 or later (build copies static assets only; no runtime on Pages) |
+| **Node version** | 20 or later |
 
-Deploy steps: connect the GitHub repo, set the build command and output directory above, save and deploy. Custom domain **hiwushuang.me** should point at the Pages project (already live).
+Connect the GitHub repo, set the build command and output directory above, then deploy. Custom domain **hiwushuang.me** should point at the Pages project.
 
-## Local development
+## Local preview
 
 ```bash
-npm run build          # writes dist/
+npm run build
 python3 -m http.server 8787 --directory dist
 # open http://127.0.0.1:8787/
 ```
 
-During design work you can also open the repo root (`index.html` links `styles.css`, `tokens.css`, `base.css`).
-
-Optional Hallmark lint (requires Hallmark skill installed under `.agents/skills/hallmark`):
-
-```bash
-npm run lint:hallmark
-```
+During markup/CSS edits you can also open `index.html` from the repo root (styles load from sibling CSS files).
 
 ## Repository layout
 
 | Path | Role |
 | --- | --- |
-| `index.html` | Page markup and minimal ASCII-field script |
-| `styles.css` | Hallmark stamp, layout, Cobalt page rules |
-| `tokens.css` | Cobalt + shared scale tokens (from Hallmark scaffold) |
-| `base.css` | Hallmark floor base rules |
+| `index.html` | Page structure, accessibility hooks, year script |
+| `tokens.css` | Color, type, spacing design tokens |
+| `base.css` | Reset and shared primitives |
+| `styles.css` | Layout and components |
+| `assets/icons/social/` | Social icons (SVG/PNG) |
 | `scripts/build.mjs` | Copies deployable files into `dist/` |
 | `dist/` | Build output (generated; not committed) |
 
-## Before / after (redesign)
+## Design (2026 refresh)
 
-**Before:** Single-file [Simplefolio](https://github.com/sethcottle/simplefolio)-style page — warm paper, rounded cards, emoji nav icons, light/dark toggle.
+**Goal:** A calm, dark indie portfolio—closer to Linear / Vercel restraint than a scaffolded theme.
 
-**After:** Hallmark **Cobalt** (graphite-forward): sticky edge nav, index hero with live ASCII glyph field, ruled project table, contact rows, keycap CTAs, intentional motion with `prefers-reduced-motion` fallback. Content unchanged except removing the outdated DNS placeholder line; domain shown as live **hiwushuang.me**.
+| Decision | Rationale |
+| --- | --- |
+| **Dark neutral base** (`oklch` cool grays) | Tech-forward without purple-gradient clichés |
+| **DM Sans + Noto Sans SC + IBM Plex Mono** | Latin display, comfortable 中文正文, mono labels |
+| **Single surface** | No light “paper” bands, fold rules, or beveled panels |
+| **Work list instead of table** | Same honest placeholders; cleaner on mobile |
+| **CSS ambient hero** | Subtle grid + gradient mesh; removed ASCII canvas noise |
+| **Motion** | Short entrance + slow ambient drift; disabled under `prefers-reduced-motion` |
+| **A11y** | Skip link, landmarks, `aria-label`s, focus rings, semantic lists |
+
+Content, social URLs, and mailto are unchanged. No fabricated projects.
