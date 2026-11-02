@@ -1,6 +1,6 @@
 # hiwushuang.me — personal homepage
 
-Static personal site for **陈璐 · mocca** ([hiwushuang.me](https://hiwushuang.me)). Pure HTML/CSS with a small script for scroll reveal, nav state, and hero video (respects `prefers-reduced-motion`).
+Static personal site for **无双 · mocca** ([hiwushuang.me](https://hiwushuang.me)). Pure HTML/CSS with a small script for scroll reveal, nav state, and hero video (respects `prefers-reduced-motion`).
 
 ## Cloudflare Pages
 
