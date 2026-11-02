@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="mocca meadow">
+  <defs>
+    <clipPath id="squircle">
+      <rect width="512" height="512" rx="112" ry="112"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#squircle)">
+    <rect width="512" height="512" fill="#FAF9F6"/>
+    <path fill="#9BAA91" d="M0 298 C 72 248 168 232 268 258 C 352 280 428 262 512 288 L512 512 L0 512 Z"/>
+    <path fill="#8C9B82" d="M0 512 L0 368 C 48 318 128 292 208 308 C 168 328 128 352 96 388 C 64 420 32 468 0 512 Z"/>
+    <path fill="#9BAA91" d="M0 512 L0 388 C 56 332 132 308 212 328 C 288 348 360 392 512 432 L512 512 Z"/>
+    <g fill="#F2EFE6">
+      <ellipse cx="256" cy="132" rx="46" ry="24"/>
+      <ellipse cx="222" cy="146" rx="30" ry="19"/>
+      <ellipse cx="290" cy="146" rx="32" ry="19"/>
+    </g>
+  </g>
+</svg>
