@@ -100,8 +100,8 @@
     const uniforms = sky.material.uniforms;
     uniforms['turbidity'].value = 0;
     uniforms['rayleigh'].value = 3;
+    uniforms['mieCoefficient'].value = 0.005;
     uniforms['mieDirectionalG'].value = 0.7;
-    uniforms['cloudElevation'].value = 1;
     uniforms['sunPosition'].value.set(-0.8, 0.19, 0.56);
 
     const pmremGenerator = new THREE.PMREMGenerator(renderer);
