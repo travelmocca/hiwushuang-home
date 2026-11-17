@@ -35,17 +35,7 @@
 
   <section class="hero" aria-labelledby="hero-heading">
     <div class="hero__media" aria-hidden="true">
-      <video
-        class="hero__video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        poster="assets/scenery/meadow-poster.jpg"
-      >
-        <source src="assets/scenery/meadow-loop.webm" type="video/webm">
-      </video>
+      <div id="hero-canvas-container" class="hero__canvas"></div>
       <div class="hero__scrim" aria-hidden="true"></div>
       <div class="hero__feather"></div>
     </div>
@@ -178,6 +168,6 @@
     </footer>
   </div>
 
-  <script src="scripts/meadow.js" defer></script>
+  <script src="scripts/hero-scene.js" defer></script>
 </body>
 </html>
