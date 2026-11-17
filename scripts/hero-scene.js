@@ -66,11 +66,11 @@
   var script = document.createElement("script");
   script.type = "module";
   script.textContent = `
-    import * as THREE from '/public/three/three.module.js';
-    import { OrbitControls } from '/public/three/addons/controls/OrbitControls.js';
-    import { Sky } from '/public/three/addons/objects/Sky.js';
-    import { GLTFLoader } from '/public/three/addons/loaders/GLTFLoader.js';
-    import { DRACOLoader } from '/public/three/addons/loaders/DRACOLoader.js';
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { Sky } from 'three/addons/objects/Sky.js';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+    import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
     let mixer, renderer, scene, camera, controls, animationId;
     let isVisible = true;
