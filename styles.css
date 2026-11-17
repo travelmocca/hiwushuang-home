@@ -132,25 +132,29 @@
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background: var(--hero-fallback);
+  background: #e2e0e0;
 }
 
-.hero__video {
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__canvas canvas {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
 }
 
-@media (min-width: 52rem) {
-  .hero__video {
-    object-position: center 28%;
-  }
-}
-
-.reduce-motion .hero__video {
+.reduce-motion .hero__canvas,
+.no-webgl .hero__canvas {
   display: none;
+}
+
+.no-webgl .hero__media {
+  background: linear-gradient(135deg, #dce0dc 0%, #e8e6e1 50%, #d5d8d5 100%);
 }
 
 .hero__scrim {

@@ -15,6 +15,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/public/three/three.module.js",
+        "three/addons/": "/public/three/addons/"
+      }
+    }
+  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">跳到正文</a>
@@ -35,17 +43,7 @@
 
   <section class="hero" aria-labelledby="hero-heading">
     <div class="hero__media" aria-hidden="true">
-      <video
-        class="hero__video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        poster="assets/scenery/meadow-poster.jpg"
-      >
-        <source src="assets/scenery/meadow-loop.webm" type="video/webm">
-      </video>
+      <div id="hero-canvas-container" class="hero__canvas"></div>
       <div class="hero__scrim" aria-hidden="true"></div>
       <div class="hero__feather"></div>
     </div>
@@ -178,6 +176,6 @@
     </footer>
   </div>
 
-  <script src="scripts/meadow.js" defer></script>
+  <script src="scripts/hero-scene.js" defer></script>
 </body>
 </html>
