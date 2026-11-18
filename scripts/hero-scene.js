@@ -115,13 +115,13 @@
       1,
       100
     );
-    camera.position.set(5, 2, 8);
+    camera.position.set(4, 2.5, 7);
 
     // Controls setup
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
-    controls.target.set(0, 0.7, 0);
+    controls.target.set(1.5, 0.7, -0.5);
     controls.enableZoom = false;
     controls.enablePan = false;
     controls.maxPolarAngle = Math.PI / 2;
@@ -138,7 +138,7 @@
       '/public/models/LittlestTokyo.glb',
       function (gltf) {
         const model = gltf.scene;
-        model.position.set(1, 1, 0);
+        model.position.set(3, 1, -1);
         model.scale.set(0.01, 0.01, 0.01);
         scene.add(model);
 

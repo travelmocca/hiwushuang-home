@@ -206,11 +206,13 @@
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   padding-block: clamp(2rem, 6vh, 3.5rem) clamp(4rem, 12vh, 6rem);
 }
 
 .hero__content {
-  max-width: 36rem;
+  max-width: min(36rem, 42vw);
+  margin-right: auto;
   --hero-text-shadow: 0 1px 2px rgba(251, 251, 248, 0.95), 0 0 28px rgba(251, 251, 248, 0.55);
 }
 
@@ -582,6 +584,10 @@
 }
 
 @media (max-width: 52rem) {
+  .hero__content {
+    max-width: 100%;
+  }
+
   .hero__overlay {
     align-items: flex-end;
     padding-bottom: clamp(4.5rem, 14vh, 6.5rem);
