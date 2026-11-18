@@ -115,17 +115,28 @@
       1,
       100
     );
-    camera.position.set(5, 2, 8);
+    camera.position.set(4, 2.5, 7);
 
-    // Controls setup
+    // Controls setup with responsive target
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
-    controls.target.set(0, 0.7, 0);
+    
+    function updateControlsTarget() {
+      if (window.innerWidth < 768) {
+        controls.target.set(0, 0.5, 0);
+      } else if (window.innerWidth < 1024) {
+        controls.target.set(2, 0.7, -0.5);
+      } else {
+        controls.target.set(2.5, 0.7, -1);
+      }
+      controls.update();
+    }
+    
+    updateControlsTarget();
     controls.enableZoom = false;
     controls.enablePan = false;
     controls.maxPolarAngle = Math.PI / 2;
-    controls.update();
 
     // Model loading with Draco
     const dracoLoader = new DRACOLoader();
@@ -138,12 +149,39 @@
       '/public/models/LittlestTokyo.glb',
       function (gltf) {
         const model = gltf.scene;
-        model.position.set(1, 1, 0);
         model.scale.set(0.01, 0.01, 0.01);
+        
+        // Responsive model positioning
+        function updateModelPosition() {
+          if (window.innerWidth < 768) {
+            // Mobile: center-bottom positioning
+            model.position.set(0, 0.5, 0);
+          } else if (window.innerWidth < 1024) {
+            // Tablet: slightly right
+            model.position.set(2, 1, -0.5);
+          } else {
+            // Desktop: far right
+            model.position.set(4.5, 1, -1.5);
+          }
+        }
+        
+        updateModelPosition();
         scene.add(model);
 
         mixer = new THREE.AnimationMixer(model);
         mixer.clipAction(gltf.animations[0]).play();
+
+        // Update position on window resize
+        const resizeHandler = function() {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          updateModelPosition();
+        };
+        
+        window.removeEventListener('resize', window.__heroResizeHandler);
+        window.__heroResizeHandler = resizeHandler;
+        window.addEventListener('resize', resizeHandler, { passive: true });
 
         animate();
       },
@@ -160,11 +198,9 @@
       }
     );
 
-    // Window resize handler
+    // Initial resize handler for camera/renderer (model-specific handler added after load)
     window.addEventListener('resize', function () {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      updateControlsTarget();
     }, { passive: true });
 
     // Visibility API for performance
