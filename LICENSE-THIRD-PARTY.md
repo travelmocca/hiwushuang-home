@@ -10,7 +10,7 @@
 
 ## Littlest Tokyo
 
-The homepage's buildings, signs, tram, cat and animation are a procedural Three.js interpretation of **Littlest Tokyo** by Glen Fox. The fallback image is rendered from that same scene. The Three.js example credits the original artwork under CC Attribution.
+The homepage's buildings, signs, tram, cat and animation are a procedural Three.js interpretation of **Littlest Tokyo** by Glen Fox. The fallback image is rendered from that same scene. The original model in `public/models/LittlestTokyo.glb` is credited by the Three.js example under CC Attribution.
 
 - [Glen Fox's original artwork](https://artstation.com/artwork/1AGwX)
 - [Three.js example and attribution](https://threejs.org/examples/webgl_animation_keyframes.html)
