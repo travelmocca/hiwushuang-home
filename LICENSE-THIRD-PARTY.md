@@ -8,13 +8,12 @@
 - **Source**: https://github.com/mrdoob/three.js
 - **Copyright**: Copyright © 2010-2024 three.js authors
 
-## Littlest Tokyo 3D Model
+## Littlest Tokyo
 
-- **Name**: Littlest Tokyo
-- **Author**: Glen Fox
-- **License**: CC Attribution (Creative Commons Attribution)
-- **Source**: https://threejs.org/examples/#webgl_animation_keyframes
-- **Attribution**: Model by Glen Fox, licensed under CC Attribution
+The homepage's buildings, signs, tram, cat and animation are a procedural Three.js interpretation of **Littlest Tokyo** by Glen Fox. The fallback image is rendered from that same scene. The Three.js example credits the original artwork under CC Attribution.
+
+- [Glen Fox's original artwork](https://artstation.com/artwork/1AGwX)
+- [Three.js example and attribution](https://threejs.org/examples/webgl_animation_keyframes.html)
 
 ## Draco Decoder
 
