@@ -4,6 +4,8 @@ Static personal site for **无双 · mocca** ([hiwushuang.me](https://hiwushuang
 
 ## Cloudflare Pages
 
+The `hiwushuang-home` project uses Direct Upload. After building the merged `main` revision, publish with `npx wrangler pages deploy dist --project-name hiwushuang-home --branch main`.
+
 | Setting | Value |
 | --- | --- |
 | **Framework preset** | None |
